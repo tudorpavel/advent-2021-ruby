@@ -3,11 +3,12 @@ require: rubocop-rspec
 AllCops:
   NewCops: enable
   Exclude:
-    - 'sorbet/**/*'
+    - sorbet/**/*
+    - vendor/bundle/**/*
 
 Style/Documentation:
   Enabled: false
 
 Metrics/BlockLength:
   Exclude:
-    - 'spec/**/*'
+    - spec/**/*
