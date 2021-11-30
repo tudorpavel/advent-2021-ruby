@@ -1,0 +1,35 @@
+stages:
+  - build
+  - test
+
+default:
+  image: ruby:2.7.5
+  cache:
+    key:
+      files:
+        - Gemfile.lock
+    paths:
+      - vendor/bundle
+  before_script:
+    - gem install bundler:2.2.32
+    - bundle config path vendor/bundle
+
+bundle:
+  stage: build
+  script:
+    - bundle install --jobs 4 --retry 3
+
+rspec:
+  stage: test
+  script:
+    - bundle exec rspec
+
+rubocop:
+  stage: test
+  script:
+    - bundle exec rubocop
+
+sorbet:
+  stage: test
+  script:
+    - bundle exec srb tc
