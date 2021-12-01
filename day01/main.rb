@@ -4,9 +4,11 @@
 require 'sorbet-runtime'
 
 require_relative '../utils/parse_input'
+require_relative './sonar'
 
 lines = Utils::ParseInput.new.read_lines(ARGF.readlines)
 
-one_line_input = T.must(lines[0])
-puts "Part1: #{one_line_input}"
-puts "Part2: #{one_line_input}"
+sonar = Day01::Sonar.build(lines)
+
+puts "Part1: #{sonar.increase_count_part1}"
+puts "Part2: #{sonar.increase_count_part2}"
