@@ -11,6 +11,8 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    nokogiri (1.12.5-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     parallel (1.21.0)
@@ -67,6 +69,7 @@ GEM
     sorbet (0.5.9368)
       sorbet-static (= 0.5.9368)
     sorbet-runtime (0.5.9368)
+    sorbet-static (0.5.9368-universal-darwin-19)
     sorbet-static (0.5.9368-x86_64-linux)
     thor (1.1.0)
     tilt (2.0.10)
@@ -76,6 +79,7 @@ GEM
       webrick (~> 1.7.0)
 
 PLATFORMS
+  x86_64-darwin-19
   x86_64-linux
 
 DEPENDENCIES
