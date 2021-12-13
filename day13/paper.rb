@@ -53,6 +53,13 @@ module Day13
       new_dots.size
     end
 
+    sig { void }
+    def part2_print_folded_paper
+      pretty_print(
+        folds.reduce(dots) { |dots, fold| fold_once(dots, fold) }
+      )
+    end
+
     private
 
     sig { params(dots: T::Set[Dot], fold: Fold).returns(T::Set[Dot]) }
@@ -75,6 +82,17 @@ module Day13
       end
 
       new_dots
+    end
+
+    sig { params(dots: T::Set[Dot]).void }
+    def pretty_print(dots)
+      (0..(dots.map(&:y).max)).each do |y|
+        (0..(dots.map(&:x).max)).each do |x|
+          print dots.include?(Dot.new(x: x, y: y)) ? '▇' : ' '
+        end
+
+        puts
+      end
     end
   end
 end
