@@ -22,4 +22,10 @@ RSpec.describe Day05::VentScan do
       expect(vent_scan.part1_point_count).to eq(5)
     end
   end
+
+  describe '#part2_point_count' do
+    it 'counts overlapping points for all line segments' do
+      expect(vent_scan.part2_point_count).to eq(12)
+    end
+  end
 end
