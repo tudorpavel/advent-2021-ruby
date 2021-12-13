@@ -16,7 +16,6 @@
 # wrong constant name <RESERVED_0>
 # wrong constant name <RESERVED_10>
 # wrong constant name <RESERVED_11>
-# wrong constant name <RESERVED_12>
 # wrong constant name <RESERVED_1>
 # wrong constant name <RESERVED_2>
 # wrong constant name <RESERVED_3>
@@ -1909,6 +1908,18 @@
 # wrong constant name mutex
 # wrong constant name infinite?
 # wrong constant name initialize
+# wrong constant name inherited
+# wrong constant name inherited
+# wrong constant name inherited
+# wrong constant name inherited
+# wrong constant name inherited
+# wrong constant name inherited
+# wrong constant name inherited
+# wrong constant name inherited
+# wrong constant name inherited
+# wrong constant name inherited
+# wrong constant name inherited
+# wrong constant name inherited
 # wrong constant name class_name
 # wrong constant name class_names
 # wrong constant name corrections
@@ -5159,8 +5170,6 @@
 # uninitialized constant Scanf
 # wrong constant name ==
 # wrong constant name ===
-# wrong constant name compare_by_identity
-# wrong constant name compare_by_identity?
 # wrong constant name divide
 # wrong constant name eql?
 # wrong constant name flatten_merge

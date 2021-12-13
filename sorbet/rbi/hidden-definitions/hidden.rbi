@@ -3015,9 +3015,74 @@ class Date::Infinity
   def initialize(d=T.unsafe(nil)); end
 end
 
-class Day01::Building
+class Day01::Sonar
   extend ::T::Private::Methods::MethodHooks
   extend ::T::Private::Methods::SingletonMethodHooks
+  def self.inherited(s); end
+end
+
+class Day02::Command
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+  def self.inherited(s); end
+end
+
+class Day02::Submarine
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+  def self.inherited(s); end
+end
+
+class Day03::Diagnostic
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+  def self.inherited(s); end
+end
+
+class Day04::BingoGame
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+  def self.inherited(s); end
+end
+
+class Day04::Board
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+  def self.inherited(s); end
+end
+
+class Day05::LineSegment::Point
+  def self.inherited(s); end
+end
+
+class Day05::LineSegment
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+  def self.inherited(s); end
+end
+
+class Day05::VentScan
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+  def self.inherited(s); end
+end
+
+class Day13::Dot
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+  def self.inherited(s); end
+end
+
+class Day13::Paper::Fold
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+  def self.inherited(s); end
+end
+
+class Day13::Paper
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+  def self.inherited(s); end
 end
 
 class Delegator
@@ -5714,6 +5779,7 @@ end
 
 class Regexp::Lexer
   CLOSING_TOKENS = ::T.let(nil, ::T.untyped)
+  CONDITION_TOKENS = ::T.let(nil, ::T.untyped)
   OPENING_TOKENS = ::T.let(nil, ::T.untyped)
 end
 
@@ -5757,6 +5823,7 @@ module Regexp::Syntax::Token::Backreference
   All = ::T.let(nil, ::T.untyped)
   Name = ::T.let(nil, ::T.untyped)
   Number = ::T.let(nil, ::T.untyped)
+  Plain = ::T.let(nil, ::T.untyped)
   RecursionLevel = ::T.let(nil, ::T.untyped)
   Type = ::T.let(nil, ::T.untyped)
 end
@@ -5870,6 +5937,7 @@ module Regexp::Syntax::Token::UnicodeProperty
   Age_V2_6_0 = ::T.let(nil, ::T.untyped)
   Age_V2_6_2 = ::T.let(nil, ::T.untyped)
   Age_V2_6_3 = ::T.let(nil, ::T.untyped)
+  Age_V3_1_0 = ::T.let(nil, ::T.untyped)
   All = ::T.let(nil, ::T.untyped)
   CharType_V1_9_0 = ::T.let(nil, ::T.untyped)
   CharType_V2_5_0 = ::T.let(nil, ::T.untyped)
@@ -5892,6 +5960,7 @@ module Regexp::Syntax::Token::UnicodeProperty
   Script_V2_5_0 = ::T.let(nil, ::T.untyped)
   Script_V2_6_0 = ::T.let(nil, ::T.untyped)
   Script_V2_6_2 = ::T.let(nil, ::T.untyped)
+  Script_V3_1_0 = ::T.let(nil, ::T.untyped)
   Type = ::T.let(nil, ::T.untyped)
   UnicodeBlock = ::T.let(nil, ::T.untyped)
   UnicodeBlock_V1_9_0 = ::T.let(nil, ::T.untyped)
@@ -5902,6 +5971,7 @@ module Regexp::Syntax::Token::UnicodeProperty
   UnicodeBlock_V2_5_0 = ::T.let(nil, ::T.untyped)
   UnicodeBlock_V2_6_0 = ::T.let(nil, ::T.untyped)
   UnicodeBlock_V2_6_2 = ::T.let(nil, ::T.untyped)
+  UnicodeBlock_V3_1_0 = ::T.let(nil, ::T.untyped)
   V1_9_0 = ::T.let(nil, ::T.untyped)
   V1_9_3 = ::T.let(nil, ::T.untyped)
   V2_0_0 = ::T.let(nil, ::T.untyped)
@@ -5912,6 +5982,7 @@ module Regexp::Syntax::Token::UnicodeProperty
   V2_6_0 = ::T.let(nil, ::T.untyped)
   V2_6_2 = ::T.let(nil, ::T.untyped)
   V2_6_3 = ::T.let(nil, ::T.untyped)
+  V3_1_0 = ::T.let(nil, ::T.untyped)
 end
 
 module Regexp::Syntax::Token::UnicodeProperty::Category
@@ -9547,10 +9618,6 @@ class Set
   def ==(other); end
 
   def ===(o); end
-
-  def compare_by_identity(); end
-
-  def compare_by_identity?(); end
 
   def divide(&func); end
 
