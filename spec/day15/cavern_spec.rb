@@ -24,4 +24,10 @@ RSpec.describe Day15::Cavern do
       expect(cavern.part1_lowest_total_risk).to eq(40)
     end
   end
+
+  describe '#part2_lowest_total_risk' do
+    it 'finds cheapest path in extended map and returns total risk' do
+      expect(cavern.part2_lowest_total_risk).to eq(315)
+    end
+  end
 end
