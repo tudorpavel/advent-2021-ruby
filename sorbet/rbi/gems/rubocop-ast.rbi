@@ -629,6 +629,7 @@ module RuboCop::AST::CollectionNode
   def compact(*args, &block); end
   def concat(*args, &block); end
   def count(*args, &block); end
+  def create_stream(*args, &block); end
   def cycle(*args, &block); end
   def deconstruct(*args, &block); end
   def delete(*args, &block); end

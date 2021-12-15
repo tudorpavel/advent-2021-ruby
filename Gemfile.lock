@@ -6,11 +6,13 @@ GEM
     benchmark (0.2.0)
     diff-lcs (1.4.4)
     e2mmap (0.1.0)
+    generator (0.0.1)
     jaro_winkler (1.5.4)
     kramdown (2.3.1)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    lazy_priority_queue (0.1.1)
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.12.5-x86_64-linux)
@@ -24,6 +26,9 @@ GEM
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
+    rgl (0.5.7)
+      lazy_priority_queue (~> 0.1.0)
+      stream (~> 0.5.3)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -71,6 +76,8 @@ GEM
     sorbet-runtime (0.5.9449)
     sorbet-static (0.5.9449-universal-darwin-19)
     sorbet-static (0.5.9449-x86_64-linux)
+    stream (0.5.3)
+      generator
     thor (1.1.0)
     tilt (2.0.10)
     unicode-display_width (2.1.0)
@@ -83,6 +90,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  rgl
   rspec
   rubocop
   rubocop-rspec

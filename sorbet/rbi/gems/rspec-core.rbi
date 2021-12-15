@@ -577,6 +577,7 @@ module RSpec::Core::HashImitatable
   def compare_by_identity(*args, &block); end
   def compare_by_identity?(*args, &block); end
   def count(*args, &block); end
+  def create_stream(*args, &block); end
   def cycle(*args, &block); end
   def deconstruct_keys(*args, &block); end
   def default(*args, &block); end
