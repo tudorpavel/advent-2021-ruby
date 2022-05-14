@@ -10,6 +10,7 @@ gem 'sorbet-runtime'
 
 group :development do
   gem 'rubocop', require: false
+  gem 'rubocop-lsp'
   gem 'rubocop-rspec', require: false
   gem 'solargraph'
   gem 'sorbet'

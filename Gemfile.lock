@@ -4,25 +4,26 @@ GEM
     ast (2.4.2)
     backport (1.2.0)
     benchmark (0.2.0)
-    diff-lcs (1.4.4)
+    diff-lcs (1.5.0)
     e2mmap (0.1.0)
     generator (0.0.1)
     jaro_winkler (1.5.4)
-    kramdown (2.3.1)
+    kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    language_server-protocol (3.16.0.3)
     lazy_priority_queue (0.1.1)
-    nokogiri (1.12.5-x86_64-darwin)
+    nokogiri (1.13.6-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.12.5-x86_64-linux)
+    nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
-    parallel (1.21.0)
-    parser (3.0.3.2)
+    parallel (1.22.1)
+    parser (3.1.2.0)
       ast (~> 2.4.1)
     racc (1.6.0)
-    rainbow (3.0.0)
-    regexp_parser (2.2.0)
+    rainbow (3.1.1)
+    regexp_parser (2.4.0)
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
@@ -42,21 +43,24 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.3)
-    rubocop (1.23.0)
+    rubocop (1.29.1)
       parallel (~> 1.10)
-      parser (>= 3.0.0.0)
+      parser (>= 3.1.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
-      rexml
-      rubocop-ast (>= 1.12.0, < 2.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.17.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.15.0)
-      parser (>= 3.0.1.1)
+    rubocop-ast (1.18.0)
+      parser (>= 3.1.1.0)
+    rubocop-lsp (0.1.6)
+      language_server-protocol (>= 3.16)
+      rubocop (>= 1.0)
     rubocop-rspec (2.6.0)
       rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
-    solargraph (0.44.2)
+    solargraph (0.44.3)
       backport (~> 1.2)
       benchmark
       bundler (>= 1.17.2)
@@ -78,7 +82,7 @@ GEM
     sorbet-static (0.5.9449-x86_64-linux)
     stream (0.5.3)
       generator
-    thor (1.1.0)
+    thor (1.2.1)
     tilt (2.0.10)
     unicode-display_width (2.1.0)
     webrick (1.7.0)
@@ -93,10 +97,11 @@ DEPENDENCIES
   rgl
   rspec
   rubocop
+  rubocop-lsp
   rubocop-rspec
   solargraph
   sorbet
   sorbet-runtime
 
 BUNDLED WITH
-   2.2.32
+   2.3.13
