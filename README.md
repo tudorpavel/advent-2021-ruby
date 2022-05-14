@@ -13,7 +13,7 @@ ruby day01/main.rb < day01/input.txt
 Ruby version used:
 
 ```
-asdf install ruby 2.7.5
+asdf install ruby 2.7.6
 ```
 
 Update bundler:

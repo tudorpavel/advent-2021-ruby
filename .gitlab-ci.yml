@@ -3,7 +3,7 @@ stages:
   - test
 
 default:
-  image: ruby:2.7.5
+  image: ruby:2.7.6
   cache:
     key:
       files:
