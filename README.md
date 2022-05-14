@@ -19,7 +19,7 @@ asdf install ruby 2.7.6
 Update bundler:
 
 ```
-gem install bundler:2.2.32
+gem install bundler:2.3.13
 ```
 
 Install dependencies:

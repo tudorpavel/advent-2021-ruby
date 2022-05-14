@@ -11,7 +11,7 @@ default:
     paths:
       - vendor/bundle
   before_script:
-    - gem install bundler:2.2.32
+    - gem install bundler:2.3.13
     - bundle config path vendor/bundle
 
 bundle:
