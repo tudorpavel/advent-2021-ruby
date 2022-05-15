@@ -24,4 +24,10 @@ RSpec.describe Day08::Decoder do
       expect(decoder.part1_easy_digit_count).to eq(26)
     end
   end
+
+  describe '#part2_sum_output_values' do
+    it 'decodes each digit and 4-digit output value and adds the output values' do
+      expect(decoder.part2_sum_output_values).to eq(61_229)
+    end
+  end
 end
