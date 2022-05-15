@@ -7,4 +7,5 @@ input = ARGF.read
 
 school = Day06::School.build(input)
 
-puts "Part 1: #{school.part1_fish_count_after_80_days}"
+puts "Part 1: #{school.fish_count_after(80)}"
+puts "Part 2: #{school.fish_count_after(256)}"
