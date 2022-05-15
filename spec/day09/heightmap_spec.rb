@@ -1,0 +1,22 @@
+# typed: false
+# frozen_string_literal: true
+
+require_relative '../../day09/heightmap'
+
+RSpec.describe Day09::Heightmap do
+  subject(:heightmap) do
+    described_class.build(%(
+      2199943210
+      3987894921
+      9856789892
+      8767896789
+      9899965678
+    ))
+  end
+
+  describe '#part1_risk_level_sum' do
+    it 'finds all low points and sums up their risk levels' do
+      expect(heightmap.part1_risk_level_sum).to eq(15)
+    end
+  end
+end
