@@ -26,4 +26,10 @@ RSpec.describe Day10::NavSubsystem do
       expect(nav_subsystem.part1_syntax_error_score).to eq(26_397)
     end
   end
+
+  describe '#part2_middle_completion_score' do
+    it 'computes completion scores for incomplete lines and returns the middle score' do
+      expect(nav_subsystem.part2_middle_completion_score).to eq(288_957)
+    end
+  end
 end

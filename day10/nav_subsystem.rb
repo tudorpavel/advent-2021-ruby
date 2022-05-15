@@ -11,6 +11,10 @@ module Day10
                            ']' => 57,
                            '}' => 1197,
                            '>' => 25_137 }, T::Hash[String, Integer])
+    COMPLETION_SCORES = T.let({ '(' => 1,
+                                '[' => 2,
+                                '{' => 3,
+                                '<' => 4 }, T::Hash[String, Integer])
     PARENS = T.let({ '(' => ')',
                      '[' => ']',
                      '{' => '}',
@@ -32,6 +36,14 @@ module Day10
       lines.map { |line| syntax_score(line) }.sum
     end
 
+    sig { returns(Integer) }
+    def part2_middle_completion_score
+      temp = lines.dup
+      temp.reject! { |line| syntax_score(line).positive? }
+
+      T.must(temp.map { |line| completion_score(line) }.sort[temp.size / 2])
+    end
+
     private
 
     sig { params(line: String).returns(Integer) }
@@ -47,6 +59,28 @@ module Day10
       end
 
       0
+    end
+
+    sig { params(line: String).returns(Integer) }
+    def completion_score(line) # rubocop:disable Metrics/MethodLength
+      stack = []
+
+      line.each_char do |c|
+        if OPEN_PARENS.include?(c)
+          stack << c
+        elsif CLOSE_PARENS.include?(c)
+          stack.pop if c == PARENS[stack.last]
+        end
+      end
+
+      score = 0
+
+      while stack.size.positive?
+        paren = stack.pop
+        score = (score * 5) + T.must(COMPLETION_SCORES[paren])
+      end
+
+      score
     end
   end
 end
