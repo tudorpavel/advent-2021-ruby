@@ -32,4 +32,10 @@ RSpec.describe Day12::CaveSystem do
       expect(cave_system.part1_path_count).to eq(226)
     end
   end
+
+  describe '#part2_path_count' do
+    it 'counts paths visiting a small cave at most twice and the other small caves at most once' do
+      expect(cave_system.part2_path_count).to eq(3509)
+    end
+  end
 end

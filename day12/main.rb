@@ -8,3 +8,4 @@ input = ARGF.read
 cave_system = Day12::CaveSystem.build(input)
 
 puts "Part 1: #{cave_system.part1_path_count}"
+puts "Part 2: #{cave_system.part2_path_count}"
