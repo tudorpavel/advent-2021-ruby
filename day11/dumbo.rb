@@ -24,7 +24,7 @@ module Day11
 
     sig { returns(Integer) }
     def part1_flash_count
-      temp = grid.dup
+      temp = grid.dup.map(&:dup)
       flash_count = 0
 
       100.times do
@@ -33,6 +33,18 @@ module Day11
       end
 
       flash_count
+    end
+
+    sig { returns(Integer) }
+    def part2_all_flash_step
+      temp = grid.dup.map(&:dup)
+
+      (1..).each do |i|
+        step_simulation(temp)
+        return i if count_flashes(temp) == 100
+      end
+
+      0
     end
 
     private

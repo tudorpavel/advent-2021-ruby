@@ -24,4 +24,10 @@ RSpec.describe Day11::Dumbo do
       expect(dumbo.part1_flash_count).to eq(1656)
     end
   end
+
+  describe '#part2_all_flash_step' do
+    it 'runs simulation until all octopuses flash at the same time and returns the step when it happened' do
+      expect(dumbo.part2_all_flash_step).to eq(195)
+    end
+  end
 end
