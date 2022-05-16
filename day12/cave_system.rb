@@ -30,9 +30,7 @@ module Day12
 
     sig { returns(Integer) }
     def part2_path_count
-      visit_counts = graph.keys.select { |k| k.downcase == k }.to_h { |k| [k, 0] }
-
-      path_count2('start', Set.new, visit_counts)
+      path_count2('start', Set.new, nil)
     end
 
     private
@@ -49,21 +47,19 @@ module Day12
       T.must(graph[current]).sum { |cave| path_count1(cave, visited.dup) }
     end
 
-    sig { params(current: String, visited: T::Set[String], visit_counts: T::Hash[String, Integer]).returns(Integer) }
-    def path_count2(current, visited, visit_counts) # rubocop:disable Metrics
+    sig { params(current: String, visited: T::Set[String], visited_twice: T.nilable(String)).returns(Integer) }
+    def path_count2(current, visited, visited_twice) # rubocop:disable Metrics
       return 1 if current == 'end'
+      return 0 if current == visited_twice
+      return 0 if visited.include?(current) && (current == 'start' || !visited_twice.nil?)
 
-      # `visit_counts` contains only small caves
-      count = visit_counts[current]
-      unless count.nil?
-        return 0 if count == 2
-        return 0 if count == 1 && current == 'start'
-        return 0 if count == 1 && visit_counts.any? { |_, c| c == 2 }
+      if current.downcase == current
+        visited_twice = current if visited.include?(current)
 
-        visit_counts[current] = count + 1
+        visited.add(current)
       end
 
-      T.must(graph[current]).sum { |cave| path_count2(cave, visited.dup, visit_counts.dup) }
+      T.must(graph[current]).sum { |cave| path_count2(cave, visited.dup, visited_twice) }
     end
   end
 end
