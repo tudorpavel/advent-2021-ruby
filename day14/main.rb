@@ -7,4 +7,5 @@ input = ARGF.read
 
 polymer_simulation = Day14::PolymerSimulation.build(input)
 
-puts "Part 1: #{polymer_simulation.part1_result_after_10_steps}"
+puts "Part 1: #{polymer_simulation.magic_result_after(10)}"
+puts "Part 2: #{polymer_simulation.magic_result_after(40)}"

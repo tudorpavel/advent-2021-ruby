@@ -27,9 +27,10 @@ RSpec.describe Day14::PolymerSimulation do
     ))
   end
 
-  describe '#part1_result_after_10_steps' do
-    it 'runs polymer simulation for 10 steps and returns the magic result' do
-      expect(polymer_simulation.part1_result_after_10_steps).to eq(1588)
+  describe '#magic_result_after' do
+    it 'computes magic result for 10 steps and 40 steps', :aggregate_failures do
+      expect(polymer_simulation.magic_result_after(10)).to eq(1588)
+      expect(polymer_simulation.magic_result_after(40)).to eq(2_188_189_693_529)
     end
   end
 end

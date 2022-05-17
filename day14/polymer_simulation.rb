@@ -7,22 +7,9 @@ module Day14
   class PolymerSimulation < T::Struct
     extend T::Sig
 
-    class Rule < T::Struct
-      extend T::Sig
-
-      const :match, String
-      const :insert, String
-
-      sig { params(line: String).returns(Rule) }
-      def self.build(line)
-        match, insert = line.strip.split(' -> ')
-
-        Rule.new(match: T.must(match), insert: T.must(insert))
-      end
-    end
-
     const :template, String
     const :rules, T::Hash[String, String]
+    prop :partial_solutions, T::Hash[String, Integer], default: {}
 
     sig { params(input: String).returns(PolymerSimulation) }
     def self.build(input)
@@ -38,31 +25,31 @@ module Day14
       )
     end
 
-    sig { returns(Integer) }
-    def part1_result_after_10_steps
-      final_template = 10.times.reduce(template) { |t, _| step_simulation(t) }
-      compute_magic_result(final_template)
+    sig { params(steps: Integer).returns(Integer) }
+    def magic_result_after(steps) # rubocop:disable Metrics
+      letters = rules.keys.join.chars.uniq
+
+      results = letters.map do |letter|
+        template.chars.count { |k| k == letter } +
+          template.chars.each_cons(2).sum { |pair| count_letter(pair.join, steps, letter) }
+      end
+
+      T.must(results.max) - T.must(results.min)
     end
 
     private
 
-    sig { params(template: String).returns(String) }
-    def step_simulation(template)
-      new_template = T.must(template[0])
+    sig { params(pair: String, step: Integer, reference: String).returns(Integer) }
+    def count_letter(pair, step, reference)
+      return 0 if step.zero?
 
-      template.chars.each_cons(2) do |pair|
-        new_template << rules[pair.join]
-        new_template << pair[1]
-      end
+      left, right = pair.chars
+      middle = rules[pair]
 
-      new_template
-    end
-
-    sig { params(template: String).returns(Integer) }
-    def compute_magic_result(template)
-      occurrence_counts = template.chars.tally.values
-
-      T.must(occurrence_counts.max) - T.must(occurrence_counts.min)
+      partial_solutions[[left, right, step, reference].join(',')] ||=
+        (middle == reference ? 1 : 0) +
+        count_letter([left, middle].join, step - 1, reference) +
+        count_letter([middle, right].join, step - 1, reference)
     end
   end
 end
