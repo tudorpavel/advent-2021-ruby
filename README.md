@@ -46,3 +46,11 @@ Run type checker:
 ```
 bundle exec srb tc
 ```
+
+## Troubleshooting
+
+If the Solargraph LSP gives warnings about 'required path could not be resolved' it's because Solargraph needs YARD docs to resolve dependencies. Following the [vscode-solargraph](https://github.com/castwide/vscode-solargraph#solargraph-and-bundler) instructions you need to run:
+
+```
+bundle exec yard gems
+```

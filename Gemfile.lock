@@ -79,6 +79,7 @@ GEM
       sorbet-static (= 0.5.9449)
     sorbet-runtime (0.5.9449)
     sorbet-static (0.5.9449-universal-darwin-19)
+    sorbet-static (0.5.9449-universal-darwin-21)
     sorbet-static (0.5.9449-x86_64-linux)
     stream (0.5.3)
       generator
@@ -91,6 +92,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
